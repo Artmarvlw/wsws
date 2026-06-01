@@ -23,7 +23,6 @@ public class StreamApiTasks {
         double totalPrice() {
             return product.price() * quantity;
         }
-
     }
 
 
@@ -41,7 +40,6 @@ public class StreamApiTasks {
                     .sum();
 
         }
-
     }
 
 
@@ -96,6 +94,14 @@ public class StreamApiTasks {
                 .toList();
 
     }
-}
 
+
+    // Task 2: Orders Above a Given Value
+    static List<Order> ordersAbove(List<Order> orders, double minValue) {
+        return orders.stream()
+                .filter(order -> order.totalValue() > minValue)
+                .sorted(Comparator.comparingDouble(Order::totalValue).reversed())
+                .toList();
+    }
+}
 
