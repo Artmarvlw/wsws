@@ -128,7 +128,7 @@ public class StreamApiTasks {
 
     }
 
-    // Task 5: Total Revenue
+    // Task 5
     static double totalRevenue(List<Order> orders) {
         return orders.stream()
                 .filter(order -> order.status() != OrderStatus.CANCELLED)
